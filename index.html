@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deepseek Chat</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Basic modal styles (adjust as needed) */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 400px;
+            border-radius: 8px;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .login-options {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .login-btn {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        #google-login-btn {
+            background-color: #4285f4;
+            color: white;
+            border: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="chat-app">
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <div class="new-chat-btn">
+                    <i class="fas fa-plus"></i>
+                    <span>New Chat</span>
+                </div>
+            </div>
+            <div class="chat-history">
+                </div>
+            <div class="sidebar-footer">
+                <div class="user-profile" id="user-profile">
+                    <div class="avatar">U</div>
+                    <span class="username">User</span>
+                </div>
+            </div>
+        </div>
+        <div class="chat-container">
+            <div class="chat-header">
+                <h1>Insight Nova</h1>
+            </div>
+            <div id="chat-log" class="chat-messages"></div>
+            <div class="input-container">
+                <div class="input-wrapper">
+                    <button id="mic-button" class="icon-button">
+                        <i class="fas fa-microphone"></i>
+                    </button>
+                    <textarea id="user-input" placeholder="Ask anything..." rows="1"></textarea>
+                    <button id="send-button" class="icon-button send-btn">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+                <div class="disclaimer">
+                    Deepseek Chat may produce inaccurate information about people, places, or facts.
+                </div>
+            </div>
+            <button id="interrupt-button" class="interrupt-btn">
+                <i class="fas fa-stop"></i> Stop Generating
+            </button>
+        </div>
+
+        <div id="loginModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Login</h2>
+                <div class="login-options">
+                    <div class="login-btn" id="mobile-login-btn">Login with Mobile</div>
+                    <div id="google-button"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/script.js"></script>
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+</body>
+</html>
