@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, render_template
 from dotenv import load_dotenv
 import os
 from pymongo import MongoClient
@@ -11,7 +11,7 @@ load_dotenv()  # Load environment variables from .env
 
 @app.route('/')
 def index():
-    return "✅ Insight Nova AI is live in your service!"
+    return render_template('index.html')
 
 # --- MongoDB Configuration ---
 MONGODB_URI = os.getenv('MONGODB_URI')
