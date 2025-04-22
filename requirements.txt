@@ -1,4 +1,7 @@
-flask
-openai
-pymongo
+Flask
+gunicorn
 python-dotenv
+pymongo
+google-auth
+requests
+dnspython
