@@ -9,6 +9,10 @@ from google.auth.transport import requests
 app = Flask(__name__)
 load_dotenv()  # Load environment variables from .env
 
+@app.route('/')
+def index():
+    return "✅ Insight Nova AI is live in your service!"
+
 # --- MongoDB Configuration ---
 MONGODB_URI = os.getenv('MONGODB_URI')
 client = MongoClient(MONGODB_URI)
