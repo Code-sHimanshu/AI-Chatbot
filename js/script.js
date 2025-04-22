@@ -236,7 +236,7 @@ async function sendMessage() {
 }
 
 async function getApiResponse(query) {
-    const apiKey = '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';
+    const apiKey = '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';
     const apiUrl = 'https://openrouter.ai/api/v1/chat/completions';
 
     const response = await fetch(apiUrl, {
